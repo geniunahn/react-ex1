@@ -1,19 +1,26 @@
-// import logo from "./logo.svg";
 import "./App.css";
+// Hello 라는 이름으로 export 되는 데이터를 받아서 사용하고 있다.
+import Hello from "./components/Hello";
 
 function App() {
   return (
     <div>
+      <Visual />
       <h1>리액트 APP</h1>
       <p>리액트 처음 시작합니다</p>
-      <Hello></Hello>
+      <Hello />
     </div>
   );
 }
 
-// Hello 함수 (컴포넌트) => JSX 태그 함수 안에 함수를 넣는 방식이다. (APP 함수 안에 Hello 함수가 들어가서 index.html에 함께 쓰이고 있음을 볼 수 있다.)
-function Hello() {
-  return <h1>Hello</h1>;
+// 동일한 문서 안에서 App 함수 안에 Visual 함수를 넣는 방법이다.
+function Visual() {
+  return (
+    <div>
+      <img src="http://placeimg.com/800/400/nature" />
+    </div>
+  );
 }
 
+// 이 문서의 함수들이 App 이라는 이름으로 export 된다. 그것은 index.js 가 import 로 받아서 root 라는 id를 사용하는 요소에게 제공한다.
 export default App;
